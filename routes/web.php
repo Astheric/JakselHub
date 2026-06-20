@@ -17,17 +17,7 @@ Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/explore', [PublicController::class, 'explore'])->name('explore');
 Route::get('/culture', [PublicController::class, 'culture'])->name('culture');
 
-/*
-|--------------------------------------------------------------------------
-| Standard User Dashboard (Redirects if Admin)
-|--------------------------------------------------------------------------
-*/
-Route::get('/dashboard', function () {
-    if (auth()->user()->role === 'admin') {
-        return redirect()->route('admin.dashboard');
-    }
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 /*
 |--------------------------------------------------------------------------

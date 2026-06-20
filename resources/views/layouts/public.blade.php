@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- CSS and JS via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -57,8 +60,8 @@
                 <!-- CTA / Auth Buttons -->
                 <div class="hidden md:flex items-center space-x-4">
                     @auth
-                        <a href="{{ route('dashboard') }}" class="px-5 py-2.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-semibold rounded-xl text-sm border border-emerald-200 transition-colors shadow-sm">
-                            Dashboard
+                        <a href="{{ route('admin.dashboard') }}" class="px-5 py-2.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-semibold rounded-xl text-sm border border-emerald-200 transition-colors shadow-sm">
+                            Admin Panel
                         </a>
                         <form method="POST" action="{{ route('logout') }}" class="inline">
                             @csrf
@@ -67,9 +70,8 @@
                             </button>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">Masuk</a>
-                        <a href="{{ route('register') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm shadow-md shadow-emerald-200 hover:shadow-emerald-300 transition-all transform hover:-translate-y-0.5">
-                            Daftar
+                        <a href="{{ route('login') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl text-sm shadow-md shadow-emerald-200 hover:shadow-emerald-300 transition-all transform hover:-translate-y-0.5">
+                            Masuk
                         </a>
                     @endauth
                 </div>
@@ -90,8 +92,8 @@
                         
                         <div class="pt-4 flex flex-col space-y-3">
                             @auth
-                                <a href="{{ route('dashboard') }}" class="w-full text-center py-3 bg-emerald-600 text-white font-bold rounded-xl shadow-md">
-                                    Dashboard
+                                <a href="{{ route('admin.dashboard') }}" class="w-full text-center py-3 bg-emerald-600 text-white font-bold rounded-xl shadow-md">
+                                    Admin Panel
                                 </a>
                                 <form method="POST" action="{{ route('logout') }}" class="w-full">
                                     @csrf
@@ -100,8 +102,7 @@
                                     </button>
                                 </form>
                             @else
-                                <a href="{{ route('login') }}" class="w-full text-center py-3 text-slate-600 font-semibold border border-slate-200 rounded-xl hover:bg-slate-50">Masuk</a>
-                                <a href="{{ route('register') }}" class="w-full text-center py-3 bg-emerald-600 text-white font-bold rounded-xl shadow-md shadow-emerald-200">Daftar</a>
+                                <a href="{{ route('login') }}" class="w-full text-center py-3 bg-emerald-600 text-white font-bold rounded-xl shadow-md shadow-emerald-200">Masuk</a>
                             @endauth
                         </div>
                     </div>
@@ -173,6 +174,17 @@
         </div>
     </footer>
 
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+            });
+        });
+    </script>
     @yield('scripts')
 </body>
 </html>

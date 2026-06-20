@@ -6,7 +6,7 @@
 
     <!-- Header Section -->
     <section class="bg-white border-b border-emerald-50 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl" data-aos="fade-up">
             <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">
                 Culture & Heritage
             </span>
@@ -20,7 +20,7 @@
     <!-- History Timeline Section -->
     <section class="py-20 bg-slate-50 border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 space-y-2">
+            <div class="text-center mb-16 space-y-2" data-aos="fade-up">
                 <h2 class="text-3xl font-black text-slate-900 tracking-tight">Linimasa Perkembangan Jaksel</h2>
                 <p class="text-slate-500 text-xs sm:text-sm">Evolusi tata kota Jakarta Selatan menuju Smart City ramah lingkungan.</p>
             </div>
@@ -43,16 +43,16 @@
                         @endphp
                         
                         <!-- Timeline Row -->
-                        <div class="mb-12 flex justify-between items-center w-full {{ $isEven ? 'flex-row-reverse' : 'left-timeline' }}">
+                        <div class="mb-12 flex justify-between items-center w-full {{ $isEven ? 'flex-row-reverse' : 'left-timeline' }}" data-aos="{{ $isEven ? 'fade-right' : 'fade-left' }}">
                             <div class="order-1 w-5/12 hidden md:block"></div>
                             
                             <!-- Central Node Dot -->
-                            <div class="z-20 flex items-center order-1 bg-emerald-600 shadow-xl w-8 h-8 rounded-full border-4 border-white justify-center">
+                            <div class="z-20 flex items-center order-1 bg-emerald-600 shadow-xl w-8 h-8 rounded-full border-4 border-white justify-center" data-aos="zoom-in" data-aos-delay="200">
                                 <span class="w-2.5 h-2.5 bg-white rounded-full"></span>
                             </div>
                             
                             <!-- Timeline Card Content -->
-                            <div class="order-1 bg-white border border-emerald-50 rounded-3xl w-full md:w-5/12 p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
+                            <div class="order-1 bg-white border border-emerald-50 rounded-3xl w-full md:w-5/12 p-6 sm:p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                                 <div class="flex items-center justify-between gap-4 mb-3">
                                     <span class="text-xs font-black uppercase text-emerald-600 bg-emerald-50 px-3 py-1 rounded-md">
                                         {{ $time->year }}
@@ -82,7 +82,7 @@
     <!-- Cultural Grid Section -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4" data-aos="fade-up">
                 <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">
                     Cultural Showcases
                 </span>
@@ -101,7 +101,7 @@
             @else
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($cultures as $gal)
-                <div class="group bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div class="group bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ ($loop->iteration % 3) * 100 }}">
                     
                     <!-- Image Showcase -->
                     <div class="h-56 bg-slate-100 relative overflow-hidden">

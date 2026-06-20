@@ -10,7 +10,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
                 <!-- Left Content -->
-                <div class="lg:col-span-6 space-y-6 text-center lg:text-left z-10">
+                <div class="lg:col-span-6 space-y-6 text-center lg:text-left z-10" data-aos="fade-right">
                     <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-100 uppercase tracking-widest animate-pulse">
                         🌱 Smart City Innovation
                     </span>
@@ -36,7 +36,7 @@
                 </div>
                 
                 <!-- Right Visual: SCBD & Nature Blend -->
-                <div class="lg:col-span-6 relative flex justify-center items-center">
+                <div class="lg:col-span-6 relative flex justify-center items-center" data-aos="zoom-in" data-aos-delay="200">
                     <div class="w-full max-w-lg relative z-10">
                         <!-- Decorative Shapes -->
                         <div class="absolute -top-12 -left-12 w-64 h-64 bg-emerald-100 rounded-full mix-blend-multiply filter blur-2xl opacity-60"></div>
@@ -80,7 +80,7 @@
 
     <!-- Smart City Real-time Metrics Widget -->
     <section class="py-12 bg-slate-50 border-b border-emerald-50 relative -mt-8 z-20 max-w-6xl mx-auto px-4">
-        <div class="bg-white border border-emerald-100 rounded-3xl p-8 sm:p-10 shadow-xl shadow-slate-100">
+        <div class="bg-white border border-emerald-100 rounded-3xl p-8 sm:p-10 shadow-xl shadow-slate-100" data-aos="fade-up" data-aos-delay="100">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-slate-100 pb-6">
                 <div>
                     <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
@@ -176,7 +176,7 @@
     <!-- Curated Destinations Showcase -->
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
                 <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">
                     🗺️ Destinasi Pilihan
                 </span>
@@ -188,7 +188,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($featuredDestinations as $dest)
-                <div class="group bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div class="group bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}">
                     <!-- Image Area -->
                     <div class="h-56 bg-slate-100 relative overflow-hidden">
                         @if($dest->image_path)
@@ -251,7 +251,7 @@
     <!-- Betawi Culture Promotion Banner -->
     <section class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-emerald-800 to-teal-950 rounded-3xl p-8 sm:p-12 md:p-16 text-white relative overflow-hidden shadow-xl">
+            <div class="bg-gradient-to-br from-emerald-800 to-teal-950 rounded-3xl p-8 sm:p-12 md:p-16 text-white relative overflow-hidden shadow-xl" data-aos="fade-up">
                 <!-- Graphics -->
                 <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-700 rounded-full mix-blend-multiply opacity-20 filter blur-xl"></div>
                 
@@ -272,9 +272,9 @@
                     </div>
                     
                     <!-- Decorative cultural icon representation -->
-                    <div class="lg:col-span-4 flex justify-center">
-                        <div class="w-48 h-48 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center shadow-lg transform rotate-3 hover:rotate-0 transition-transform">
-                            <div class="text-center p-6 text-white space-y-2">
+                    <div class="lg:col-span-4 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="w-48 h-48 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center shadow-lg transform rotate-3 group hover:rotate-12 transition-transform duration-500">
+                            <div class="text-center p-6 text-white space-y-2 group-hover:scale-110 transition-transform duration-500">
                                 <span class="text-5xl block animate-bounce">🏮</span>
                                 <span class="font-extrabold text-xs tracking-widest uppercase block text-emerald-300">Setu Babakan</span>
                                 <span class="text-[10px] text-slate-300 font-medium block">Jakarta Selatan</span>

@@ -22,7 +22,7 @@
     <!-- Header Section -->
     <section class="bg-white border-b border-emerald-50 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
+            <div class="max-w-3xl" data-aos="fade-right">
                 <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">
                     Explore Jakarta Selatan
                 </span>
@@ -39,7 +39,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <!-- Filters Card -->
-            <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm mb-8">
+            <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm mb-8" data-aos="fade-up" data-aos-delay="100">
                 <form method="GET" action="{{ route('explore') }}" class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
                     
                     <!-- Category Selection -->
@@ -84,7 +84,7 @@
             </div>
 
             <!-- Map Embed Container -->
-            <div class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-md mb-12">
+            <div class="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-md mb-12" data-aos="fade-up" data-aos-delay="200">
                 <div id="map"></div>
                 <div class="bg-emerald-950 text-emerald-100 text-xs px-6 py-3 flex justify-between items-center">
                     <span>💡 Peta Interaktif Nusantara Digital City</span>
@@ -94,7 +94,7 @@
 
             <!-- Directory Grid -->
             <div>
-                <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-2">
+                <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-2" data-aos="fade-right">
                     📂 Daftar Destinasi Terdata <span class="text-sm font-bold text-slate-400 bg-slate-200/50 px-3 py-1 rounded-full">{{ $destinations->count() }} Lokasi</span>
                 </h2>
                 
@@ -107,7 +107,7 @@
                 @else
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach($destinations as $index => $dest)
-                    <div class="group bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between" id="card-{{ $dest->id }}">
+                    <div class="group bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between" id="card-{{ $dest->id }}" data-aos="fade-up" data-aos-delay="{{ ($loop->iteration % 3) * 100 }}">
                         
                         <!-- Top Banner / Category -->
                         <div class="h-40 bg-slate-100 relative overflow-hidden">
