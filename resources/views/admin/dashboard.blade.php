@@ -63,14 +63,14 @@
                 <div class="space-y-2">
                     <label for="aqi" class="block text-xs font-bold uppercase tracking-wider text-slate-600">Air Quality Index (AQI)</label>
                     <input type="number" name="aqi" id="aqi" value="{{ $metrics ? $metrics->aqi : 50 }}" min="0" max="500" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
-                    <p class="text-[10px] text-slate-400">Skala indeks 0 - 500 (PM2.5)</p>
+                    <p class="text-[10px] text-slate-400">Hanya dipakai sebagai <b>fallback</b> jika API Open-Meteo gagal/down. Skala 0-500.</p>
                 </div>
 
                 <!-- Green Spaces Count Field -->
                 <div class="space-y-2">
                     <label for="green_spaces_count" class="block text-xs font-bold uppercase tracking-wider text-slate-600">Total Ruang Hijau (RTH)</label>
                     <input type="number" name="green_spaces_count" id="green_spaces_count" value="{{ $metrics ? $metrics->green_spaces_count : 150 }}" min="0" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
-                    <p class="text-[10px] text-slate-400">Jumlah taman & hutan kota terdaftar</p>
+                    <p class="text-[10px] text-slate-400">Hanya dipakai sebagai <b>fallback</b>. Data saat ini dihitung otomatis dari API (OpenStreetMap) + Database.</p>
                 </div>
 
                 <!-- Public Transport Count Field -->

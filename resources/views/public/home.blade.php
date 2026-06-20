@@ -126,7 +126,10 @@
                             <span class="text-4xl font-extrabold text-slate-900 tracking-tight">{{ $aqi }}</span>
                             <span class="text-xs font-bold {{ $aqiText }}">{{ $aqiStatus }}</span>
                         </div>
-                        <p class="text-xs text-slate-500 mt-1">Sensor karbon PM2.5 terintegrasi.</p>
+                        <p class="text-[10px] text-emerald-600 font-bold mt-1 flex items-center gap-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Live Data: Open-Meteo API
+                        </p>
                     </div>
                     <div class="w-12 h-12 rounded-xl {{ $aqiColor }} text-white flex items-center justify-center shadow-md">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -231,6 +234,11 @@
                                     🚇 Stasiun MRT Terdekat
                                 </span>
                             @endif
+                        </div>
+                        <div class="pt-4 mt-auto">
+                            <a href="{{ route('destination.show', $dest->id) }}" class="w-full text-center py-2.5 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-bold text-xs rounded-xl transition-all shadow-sm flex items-center justify-center">
+                                Lihat Detail Destinasi
+                            </a>
                         </div>
                     </div>
                 </div>

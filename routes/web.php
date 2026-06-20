@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/explore', [PublicController::class, 'explore'])->name('explore');
+Route::get('/transum', [PublicController::class, 'transum'])->name('transum');
 Route::get('/culture', [PublicController::class, 'culture'])->name('culture');
+Route::get('/destination/{id}', [PublicController::class, 'showDestination'])->name('destination.show');
 
 
 
@@ -39,6 +41,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
     Route::post('/metrics', [AdminController::class, 'updateMetrics'])->name('metrics.update');
     
+    Route::post('/destinations/sync', [AdminDestinationController::class, 'syncOsm'])->name('destinations.sync');
     Route::resource('destinations', AdminDestinationController::class);
     Route::resource('timelines', AdminTimelineController::class);
     Route::resource('cultures', AdminCultureController::class);

@@ -7,9 +7,17 @@
 
     <div class="mb-6 flex justify-between items-center">
         <p class="text-xs text-slate-500">Daftar lokasi wisata, taman kota, kuliner, dan area nongkrong terdata.</p>
-        <a href="{{ route('admin.destinations.create') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-1.5">
-            <span>➕</span> Tambah Destinasi Baru
-        </a>
+        <div class="flex items-center space-x-3">
+            <form action="{{ route('admin.destinations.sync') }}" method="POST" class="m-0" onsubmit="this.querySelector('button').innerHTML = '⏳ Menarik Data...'; this.querySelector('button').disabled = true;">
+                @csrf
+                <button type="submit" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+                    <span>🔄</span> Sinkronisasi API
+                </button>
+            </form>
+            <a href="{{ route('admin.destinations.create') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-1.5">
+                <span>➕</span> Tambah Destinasi Baru
+            </a>
+        </div>
     </div>
 
     <!-- Data Table Card -->
@@ -105,6 +113,12 @@
                     </tbody>
                 </table>
             </div>
+            
+            @if($destinations->hasPages())
+                <div class="p-6 border-t border-slate-200">
+                    {{ $destinations->links() }}
+                </div>
+            @endif
         @endif
     </div>
 

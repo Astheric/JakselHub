@@ -40,8 +40,17 @@
             
             <!-- Filters Card -->
             <div class="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm mb-8" data-aos="fade-up" data-aos-delay="100">
-                <form method="GET" action="{{ route('explore') }}" class="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
+                <form method="GET" action="{{ route('explore') }}" class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-end">
                     
+                    <!-- Search Input -->
+                    <div class="space-y-2">
+                        <label for="search" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Cari Destinasi</label>
+                        <div class="relative">
+                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+                            <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Ketik nama..." class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
+                        </div>
+                    </div>
+
                     <!-- Category Selection -->
                     <div class="space-y-2">
                         <label for="category" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Pilih Kategori</label>
@@ -49,6 +58,7 @@
                             <option value="">Semua Destinasi</option>
                             <option value="Ruang Terbuka Hijau" {{ $category === 'Ruang Terbuka Hijau' ? 'selected' : '' }}>🌳 Ruang Terbuka Hijau</option>
                             <option value="Heritage" {{ $category === 'Heritage' ? 'selected' : '' }}>🏮 Warisan Budaya (Heritage)</option>
+                            <option value="Tempat Wisata" {{ $category === 'Tempat Wisata' ? 'selected' : '' }}>🎡 Tempat Wisata</option>
                             <option value="Aesthetic Cafe" {{ $category === 'Aesthetic Cafe' ? 'selected' : '' }}>☕ Aesthetic Cafe</option>
                         </select>
                     </div>
@@ -95,7 +105,7 @@
             <!-- Directory Grid -->
             <div>
                 <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-2" data-aos="fade-right">
-                    📂 Daftar Destinasi Terdata <span class="text-sm font-bold text-slate-400 bg-slate-200/50 px-3 py-1 rounded-full">{{ $destinations->count() }} Lokasi</span>
+                    📂 Daftar Destinasi Terdata <span class="text-sm font-bold text-slate-400 bg-slate-200/50 px-3 py-1 rounded-full">{{ $destinations->total() }} Lokasi</span>
                 </h2>
                 
                 @if($destinations->isEmpty())
@@ -156,14 +166,25 @@
                                     @endif
                                 </div>
 
-                                <button type="button" onclick="focusMap({{ $dest->latitude }}, {{ $dest->longitude }}, '{{ addslashes($dest->name) }}', '{{ $dest->category }}', {{ $index }})" class="w-full text-center py-2.5 bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200 hover:border-emerald-200 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm">
-                                    <span>🔍</span> Lihat di Peta
-                                </button>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <a href="{{ route('destination.show', $dest->id) }}" class="w-full text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition-all shadow-sm flex items-center justify-center">
+                                        Lihat Detail
+                                    </a>
+                                    <button type="button" onclick="focusMap({{ $dest->latitude }}, {{ $dest->longitude }}, '{{ addslashes($dest->name) }}', '{{ $dest->category }}', {{ $index }})" class="w-full text-center py-2.5 bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200 hover:border-emerald-200 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm">
+                                        <span>🔍</span> Di Peta
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
+                
+                @if($destinations->hasPages())
+                    <div class="mt-12">
+                        {{ $destinations->links() }}
+                    </div>
+                @endif
                 @endif
             </div>
 
