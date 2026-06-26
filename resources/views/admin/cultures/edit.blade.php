@@ -26,9 +26,9 @@
                 <div class="space-y-2">
                     <label for="category" class="block text-xs font-bold uppercase tracking-wider text-slate-600">Kategori</label>
                     <select name="category" id="category" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
-                        <option value="Kesenian" {{ old('category', $culture->category) === 'Kesenian' ? 'selected' : '' }}>🎭 Kesenian</option>
-                        <option value="Festival" {{ old('category', $culture->category) === 'Festival' ? 'selected' : '' }}>🏮 Festival</option>
-                        <option value="Event" {{ old('category', $culture->category) === 'Event' ? 'selected' : '' }}>📅 Event Kreatif</option>
+                        <option value="Kesenian" {{ old('category', $culture->category) === 'Kesenian' ? 'selected' : '' }}>Kesenian</option>
+                        <option value="Festival" {{ old('category', $culture->category) === 'Festival' ? 'selected' : '' }}>Festival</option>
+                        <option value="Event" {{ old('category', $culture->category) === 'Event' ? 'selected' : '' }}>Event Kreatif</option>
                     </select>
                 </div>
             </div>

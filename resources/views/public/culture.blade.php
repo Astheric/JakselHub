@@ -32,7 +32,7 @@
                 
                 @if($timelines->isEmpty())
                 <div class="bg-white border border-dashed border-slate-200 rounded-3xl p-12 text-center text-slate-500">
-                    <span class="text-4xl block mb-2">📜</span>
+                    <i class="bi bi-journal-text text-slate-300 text-4xl block mb-2"></i>
                     <h3 class="font-extrabold text-slate-700 text-lg">Belum ada linimasa terdata</h3>
                     <p class="text-xs text-slate-400 mt-1">Gunakan panel admin untuk menambahkan linimasa sejarah baru.</p>
                 </div>
@@ -94,7 +94,7 @@
             
             @if($cultures->isEmpty())
             <div class="border border-dashed border-slate-200 rounded-3xl p-12 text-center text-slate-500">
-                <span class="text-4xl block mb-2">🎭</span>
+                <i class="bi bi-masks text-slate-300 text-4xl block mb-2"></i>
                 <h3 class="font-extrabold text-slate-700 text-lg">Belum ada kesenian terdata</h3>
                 <p class="text-xs text-slate-400 mt-1">Gunakan panel admin untuk mengisi galeri kesenian Betawi.</p>
             </div>
@@ -109,7 +109,7 @@
                             <img src="{{ asset($gal->image_path) }}" alt="{{ $gal->title }}" class="w-full h-full object-cover">
                         @else
                             <div class="w-full h-full bg-gradient-to-br from-emerald-600/90 to-teal-950 flex flex-col items-center justify-center p-6 text-white text-center">
-                                <span class="text-4xl mb-2">🎭</span>
+                                <i class="bi bi-masks text-white/50 text-4xl mb-2"></i>
                                 <span class="font-bold text-sm tracking-wide border-b border-emerald-400/40 pb-0.5">{{ $gal->title }}</span>
                             </div>
                         @endif
@@ -132,7 +132,7 @@
                         </div>
                         
                         <div class="border-t border-slate-50 pt-3 text-[10px] text-slate-400 flex justify-between items-center font-bold">
-                            <span>🍃 Nusantara Digital City</span>
+                            <span><i class="bi bi-leaf-fill text-emerald-500 mr-1"></i> Nusantara Digital City</span>
                             <span class="text-emerald-600">Terverifikasi Lestarikan Budaya</span>
                         </div>
                     </div>

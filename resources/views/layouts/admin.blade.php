@@ -21,6 +21,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <!-- AlpineJS fallback -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -40,19 +43,19 @@
             <!-- Navigation Links -->
             <nav class="p-6 space-y-2">
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl font-semibold text-sm transition-all {{ Route::is('admin.dashboard') ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }}">
-                    <span>📊</span>
+                    <i class="bi bi-bar-chart-line text-base"></i>
                     <span>Overview & Metrics</span>
                 </a>
                 <a href="{{ route('admin.destinations.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl font-semibold text-sm transition-all {{ Route::is('admin.destinations.*') ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }}">
-                    <span>🌳</span>
+                    <i class="bi bi-tree text-base"></i>
                     <span>Destinasi Wisata</span>
                 </a>
                 <a href="{{ route('admin.timelines.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl font-semibold text-sm transition-all {{ Route::is('admin.timelines.*') ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }}">
-                    <span>📜</span>
+                    <i class="bi bi-journal-text text-base"></i>
                     <span>Linimasa Sejarah</span>
                 </a>
                 <a href="{{ route('admin.cultures.index') }}" class="flex items-center space-x-3 px-4 py-3 rounded-xl font-semibold text-sm transition-all {{ Route::is('admin.cultures.*') ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-400 hover:bg-slate-800 hover:text-white' }}">
-                    <span>🎭</span>
+                    <i class="bi bi-masks text-base"></i>
                     <span>Galeri Budaya</span>
                 </a>
             </nav>
@@ -61,7 +64,7 @@
         <!-- Sidebar Footer -->
         <div class="p-6 border-t border-slate-800 bg-slate-950 space-y-4">
             <a href="{{ route('home') }}" target="_blank" class="flex items-center justify-center space-x-2 w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl border border-slate-700 transition-all shadow-sm">
-                <span>🌐</span>
+                <i class="bi bi-globe text-xs"></i>
                 <span>Lihat Website</span>
             </a>
             
@@ -83,7 +86,7 @@
             </div>
             <div class="flex items-center space-x-4">
                 <div class="flex items-center space-x-2 text-sm text-slate-500">
-                    <span>👤</span>
+                    <i class="bi bi-person-circle text-base"></i>
                     <span class="font-semibold text-slate-700">{{ auth()->user()->name }}</span>
                     <span class="px-2 py-0.5 bg-red-100 text-red-700 text-[10px] font-bold rounded-full uppercase">{{ auth()->user()->role }}</span>
                 </div>
@@ -95,7 +98,7 @@
             <!-- Success/Error Alerts -->
             @if(session('success'))
                 <div class="mb-8 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-2xl flex items-center gap-3 text-sm font-semibold shadow-sm">
-                    <span class="text-lg">✅</span>
+                    <i class="bi bi-check-circle-fill text-lg text-emerald-600"></i>
                     <span>{{ session('success') }}</span>
                 </div>
             @endif
@@ -103,7 +106,7 @@
             @if($errors->any())
                 <div class="mb-8 p-4 bg-red-50 border border-red-200 text-red-800 rounded-2xl shadow-sm text-sm">
                     <div class="flex items-center gap-3 font-bold mb-2 text-red-950">
-                        <span class="text-lg">🚨</span>
+                        <i class="bi bi-exclamation-triangle-fill text-lg text-red-600"></i>
                         <span>Ada kesalahan dalam pengisian formulir:</span>
                     </div>
                     <ul class="list-disc list-inside pl-4 text-xs space-y-1 text-red-700">

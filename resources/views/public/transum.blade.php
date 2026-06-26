@@ -45,14 +45,14 @@
         
         <!-- Network Selector Pills -->
         <div class="flex flex-wrap justify-center gap-4 mt-8">
-            <a href="{{ route('transum', ['type' => 'mrt']) }}" class="px-6 py-3 rounded-full font-bold transition-all duration-300 {{ $type === 'mrt' ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] scale-105' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white backdrop-blur-md border border-slate-600' }}">
-                🚇 MRT Jakarta
+            <a href="{{ route('transum', ['type' => 'mrt']) }}" class="px-6 py-3 rounded-full font-bold transition-all duration-300 {{ $type === 'mrt' ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] scale-105' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white backdrop-blur-md border border-slate-600' }} flex items-center gap-2">
+                <i class="bi bi-subway"></i> MRT Jakarta
             </a>
-            <a href="{{ route('transum', ['type' => 'krl']) }}" class="px-6 py-3 rounded-full font-bold transition-all duration-300 {{ $type === 'krl' ? 'bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)] scale-105' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white backdrop-blur-md border border-slate-600' }}">
-                🚆 KRL Commuter
+            <a href="{{ route('transum', ['type' => 'krl']) }}" class="px-6 py-3 rounded-full font-bold transition-all duration-300 {{ $type === 'krl' ? 'bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)] scale-105' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white backdrop-blur-md border border-slate-600' }} flex items-center gap-2">
+                <i class="bi bi-train-front"></i> KRL Commuter
             </a>
-            <a href="{{ route('transum', ['type' => 'tj']) }}" class="px-6 py-3 rounded-full font-bold transition-all duration-300 {{ $type === 'tj' ? 'bg-orange-500 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] scale-105' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white backdrop-blur-md border border-slate-600' }}">
-                🚌 Transjakarta
+            <a href="{{ route('transum', ['type' => 'tj']) }}" class="px-6 py-3 rounded-full font-bold transition-all duration-300 {{ $type === 'tj' ? 'bg-orange-500 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] scale-105' : 'bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white backdrop-blur-md border border-slate-600' }} flex items-center gap-2">
+                <i class="bi bi-bus-front"></i> Transjakarta
             </a>
         </div>
     </div>
@@ -127,7 +127,7 @@
                                         <img src="{{ asset($dest->image_path) }}" alt="{{ $dest->name }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                                     @else
                                         <div class="w-full h-full bg-gradient-to-br from-{{ $uiColor }}-400 to-slate-500 flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
-                                            <span class="text-5xl opacity-50">📍</span>
+                                            <i class="bi bi-geo-alt-fill text-5xl text-white/50"></i>
                                         </div>
                                     @endif
                                     
@@ -139,7 +139,7 @@
                                     
                                     <!-- Distance Badge -->
                                     <div class="absolute bottom-4 right-4 flex items-center gap-2 px-3 py-1.5 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold rounded-xl shadow-sm border border-white/20">
-                                        <span class="text-base">🚶</span>
+                                        <i class="bi bi-person-walking text-sm"></i>
                                         <span>{{ $dest->distance_meters }} m</span>
                                     </div>
                                 </a>
@@ -156,13 +156,13 @@
                     </div>
                 @else
                     <div class="bg-white rounded-3xl p-12 text-center shadow-sm border border-slate-100 flex flex-col items-center justify-center">
-                        <div class="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner">
-                            🚶‍♂️
+                        <div class="w-24 h-24 bg-slate-50 rounded-full flex items-center justify-center text-4xl mb-6 shadow-inner text-slate-400">
+                            <i class="bi bi-person-walking"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800 mb-2">Tidak Ada Destinasi Terdekat</h3>
                         <p class="text-slate-500 max-w-md mx-auto">Sistem belum menemukan taman atau museum yang berada dalam radius 1.5 KM berjalan kaki dari stasiun/halte ini.</p>
                         
-                        <a href="{{ route('public.explore') }}" class="mt-8 px-6 py-3 bg-{{ $uiColor }}-600 hover:bg-{{ $uiColor }}-700 text-white font-bold rounded-xl shadow-md transition-all">
+                        <a href="{{ route('explore') }}" class="mt-8 px-6 py-3 bg-{{ $uiColor }}-600 hover:bg-{{ $uiColor }}-700 text-white font-bold rounded-xl shadow-md transition-all">
                             Cari Destinasi Lain
                         </a>
                     </div>

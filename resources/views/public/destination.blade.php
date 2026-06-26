@@ -19,7 +19,7 @@
         @else
             <!-- Placeholder for API Data -->
             <div class="w-full h-full bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-900 flex flex-col items-center justify-center p-6 text-white text-center">
-                <span class="text-7xl sm:text-8xl mb-4 opacity-90 animate-bounce">🌳</span>
+                <i class="bi bi-tree text-7xl sm:text-8xl mb-4 text-emerald-100 opacity-90 animate-bounce"></i>
                 <span class="font-bold text-lg sm:text-xl tracking-widest uppercase text-emerald-100">{{ $destination->category }}</span>
             </div>
             <!-- Decorative Overlay -->
@@ -49,7 +49,7 @@
                     </h1>
                     
                     <div class="flex items-start gap-2 text-slate-500">
-                        <span class="text-xl">📍</span>
+                        <i class="bi bi-geo-alt-fill text-slate-400 text-xl mt-0.5"></i>
                         <p class="text-sm sm:text-base leading-relaxed">{{ $destination->address }}</p>
                     </div>
 
@@ -62,7 +62,7 @@
                     <div class="flex flex-wrap gap-3 pt-6 border-t border-slate-100 mt-6">
                         @if($destination->walkable)
                             <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl">
-                                <span class="text-2xl">🚶</span>
+                                <i class="bi bi-person-walking text-slate-500 text-2xl"></i>
                                 <div>
                                     <span class="block text-[10px] uppercase font-bold text-slate-400">Aksesibilitas</span>
                                     <span class="block text-sm font-bold text-emerald-700">Ramah Pejalan Kaki</span>
@@ -72,7 +72,7 @@
                         
                         @if($destination->mrt_integrated)
                             <div class="flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-xl">
-                                <span class="text-2xl">🚇</span>
+                                <i class="bi bi-subway text-slate-500 text-2xl"></i>
                                 <div>
                                     <span class="block text-[10px] uppercase font-bold text-slate-400">Transportasi</span>
                                     <span class="block text-sm font-bold text-teal-700">Dekat Stasiun MRT</span>
@@ -82,7 +82,7 @@
 
                         @if(isset($destination->is_api) && $destination->is_api)
                             <div class="flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-xl w-full mt-2">
-                                <span class="text-xl">📡</span>
+                                <i class="bi bi-broadcast text-blue-500 text-2xl"></i>
                                 <div>
                                     <span class="block text-[10px] uppercase font-bold text-blue-400">Sumber Data</span>
                                     <span class="block text-xs font-bold text-blue-700">Otomatis dari OpenStreetMap API</span>

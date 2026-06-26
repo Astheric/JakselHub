@@ -26,9 +26,9 @@
                 <div class="space-y-2">
                     <label for="category" class="block text-xs font-bold uppercase tracking-wider text-slate-600">Kategori</label>
                     <select name="category" id="category" required class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
-                        <option value="Ruang Terbuka Hijau" {{ old('category', $destination->category) === 'Ruang Terbuka Hijau' ? 'selected' : '' }}>🌳 Ruang Terbuka Hijau</option>
-                        <option value="Heritage" {{ old('category', $destination->category) === 'Heritage' ? 'selected' : '' }}>🏮 Warisan Budaya (Heritage)</option>
-                        <option value="Aesthetic Cafe" {{ old('category', $destination->category) === 'Aesthetic Cafe' ? 'selected' : '' }}>☕ Aesthetic Cafe</option>
+                        <option value="Ruang Terbuka Hijau" {{ old('category', $destination->category) === 'Ruang Terbuka Hijau' ? 'selected' : '' }}>Ruang Terbuka Hijau</option>
+                        <option value="Heritage" {{ old('category', $destination->category) === 'Heritage' ? 'selected' : '' }}>Warisan Budaya (Heritage)</option>
+                        <option value="Aesthetic Cafe" {{ old('category', $destination->category) === 'Aesthetic Cafe' ? 'selected' : '' }}>Aesthetic Cafe</option>
                     </select>
                 </div>
             </div>
@@ -85,14 +85,14 @@
                     <label class="relative flex items-center cursor-pointer">
                         <input type="checkbox" name="walkable" value="1" {{ old('walkable', $destination->walkable) ? 'checked' : '' }} class="sr-only peer">
                         <div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-emerald-600"></div>
-                        <span class="ml-3 text-sm font-semibold text-slate-700">🏃 Ramah Pejalan Kaki (Walkable)</span>
+                        <span class="ml-3 text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="bi bi-person-walking"></i> Ramah Pejalan Kaki (Walkable)</span>
                     </label>
 
                     <!-- MRT -->
                     <label class="relative flex items-center cursor-pointer">
                         <input type="checkbox" name="mrt_integrated" value="1" {{ old('mrt_integrated', $destination->mrt_integrated) ? 'checked' : '' }} class="sr-only peer">
                         <div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-teal-600"></div>
-                        <span class="ml-3 text-sm font-semibold text-slate-700">🚇 Dekat Stasiun MRT (Integrated)</span>
+                        <span class="ml-3 text-sm font-semibold text-slate-700 flex items-center gap-1.5"><i class="bi bi-subway"></i> Dekat Stasiun MRT (Integrated)</span>
                     </label>
                 </div>
             </div>

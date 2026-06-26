@@ -8,7 +8,7 @@
     <div class="mb-6 flex justify-between items-center">
         <p class="text-xs text-slate-500">Linimasa perkembangan kota dari kawasan resapan air hingga menjadi metropolitan hijau terintegrasi.</p>
         <a href="{{ route('admin.timelines.create') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-1.5">
-            <span>➕</span> Tambah Milestone Baru
+            <i class="bi bi-plus-lg"></i> Tambah Milestone Baru
         </a>
     </div>
 
@@ -16,7 +16,7 @@
     <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
         @if($timelines->isEmpty())
             <div class="p-12 text-center text-slate-500">
-                <span class="text-3xl block mb-2">📜</span>
+                <i class="bi bi-journal-text text-3xl block mb-2 text-slate-300"></i>
                 <p class="font-extrabold text-slate-700">Belum ada linimasa sejarah terdata.</p>
                 <p class="text-xs text-slate-400 mt-1">Mulai tambahkan dengan mengklik tombol di atas.</p>
             </div>
@@ -61,14 +61,14 @@
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end space-x-2">
                                         <a href="{{ route('admin.timelines.edit', $time->id) }}" class="p-2 bg-slate-50 hover:bg-emerald-50 text-slate-500 hover:text-emerald-700 border border-slate-200 hover:border-emerald-200 rounded-xl transition-all font-semibold text-xs flex items-center justify-center">
-                                            📝 Edit
+                                            <i class="bi bi-pencil-square mr-1"></i> Edit
                                         </a>
                                         
                                         <form method="POST" action="{{ route('admin.timelines.destroy', $time->id) }}" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus milestone era {{ $time->year }}?')">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="p-2 bg-slate-50 hover:bg-red-50 text-slate-500 hover:text-red-700 border border-slate-200 hover:border-red-200 rounded-xl transition-all font-semibold text-xs flex items-center justify-center">
-                                                🗑️ Hapus
+                                                <i class="bi bi-trash mr-1"></i> Hapus
                                             </button>
                                         </form>
                                     </div>

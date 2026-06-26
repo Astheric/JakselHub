@@ -28,6 +28,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
     <!-- AlpineJS fallback if compiled script has delay -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -54,7 +57,7 @@
                 <nav class="hidden md:flex space-x-8 items-center">
                     <a href="{{ route('home') }}" class="text-sm font-semibold tracking-wide {{ Route::is('home') ? 'text-emerald-600 border-b-2 border-emerald-600 pb-1' : 'text-slate-600 hover:text-emerald-600' }} transition-all">Home</a>
                     <a href="{{ route('explore') }}" class="text-sm font-semibold tracking-wide {{ Route::is('explore') ? 'text-emerald-600 border-b-2 border-emerald-600 pb-1' : 'text-slate-600 hover:text-emerald-600' }} transition-all">Explore Jaksel</a>
-                    <a href="{{ route('transum') }}" class="text-sm font-semibold tracking-wide {{ Route::is('transum') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-slate-600 hover:text-blue-600' }} transition-all">Transum 🚌</a>
+                    <a href="{{ route('transum') }}" class="text-sm font-semibold tracking-wide {{ Route::is('transum') ? 'text-blue-600 border-b-2 border-blue-600 pb-1' : 'text-slate-600 hover:text-blue-600' }} transition-all">Transum <i class="bi bi-bus-front ms-0.5"></i></a>
                     <a href="{{ route('culture') }}" class="text-sm font-semibold tracking-wide {{ Route::is('culture') ? 'text-emerald-600 border-b-2 border-emerald-600 pb-1' : 'text-slate-600 hover:text-emerald-600' }} transition-all">Culture & Heritage</a>
                 </nav>
                 
@@ -89,7 +92,7 @@
                     <div x-show="open" @click.away="open = false" x-transition class="absolute top-20 right-4 left-4 bg-white border border-emerald-100 shadow-xl rounded-2xl p-6 flex flex-col space-y-4">
                         <a href="{{ route('home') }}" class="text-base font-bold py-2 border-b border-slate-50 {{ Route::is('home') ? 'text-emerald-600' : 'text-slate-600' }}">Home</a>
                         <a href="{{ route('explore') }}" class="text-base font-bold py-2 border-b border-slate-50 {{ Route::is('explore') ? 'text-emerald-600' : 'text-slate-600' }}">Explore Jaksel</a>
-                        <a href="{{ route('transum') }}" class="text-base font-bold py-2 border-b border-slate-50 {{ Route::is('transum') ? 'text-blue-600' : 'text-slate-600' }}">Transum 🚌</a>
+                        <a href="{{ route('transum') }}" class="text-base font-bold py-2 border-b border-slate-50 {{ Route::is('transum') ? 'text-blue-600' : 'text-slate-600' }}">Transum <i class="bi bi-bus-front ms-0.5"></i></a>
                         <a href="{{ route('culture') }}" class="text-base font-bold py-2 border-b border-slate-50 {{ Route::is('culture') ? 'text-emerald-600' : 'text-slate-600' }}">Culture & Heritage</a>
                         
                         <div class="pt-4 flex flex-col space-y-3">
@@ -139,7 +142,7 @@
                         Inisiatif integrasi digital terdepan di Jakarta Selatan untuk merepresentasikan modernitas tata kelola kota berbasis Smart Environment dan pelestarian warisan budaya Betawi.
                     </p>
                     <span class="text-xs text-emerald-400/80 px-3 py-1.5 bg-emerald-950/60 border border-emerald-900 rounded-full font-semibold">
-                        🍃 Nusantara Digital City Ecosystem
+                        <i class="bi bi-leaf-fill text-emerald-400 mr-1"></i> Nusantara Digital City Ecosystem
                     </span>
                 </div>
                 
@@ -149,7 +152,7 @@
                     <ul class="space-y-3 text-sm">
                         <li><a href="{{ route('home') }}" class="hover:text-emerald-400 transition-colors">Halaman Utama</a></li>
                         <li><a href="{{ route('explore') }}" class="hover:text-emerald-400 transition-colors">Panduan Wisata (Explore)</a></li>
-                        <li><a href="{{ route('transum') }}" class="hover:text-emerald-400 transition-colors">Transum 🚌</a></li>
+                        <li><a href="{{ route('transum') }}" class="hover:text-emerald-400 transition-colors">Transum <i class="bi bi-bus-front ms-0.5"></i></a></li>
                         <li><a href="{{ route('culture') }}" class="hover:text-emerald-400 transition-colors">Edukasi & Sejarah (Culture)</a></li>
                     </ul>
                 </div>

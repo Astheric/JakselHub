@@ -12,7 +12,7 @@
                 <!-- Left Content -->
                 <div class="lg:col-span-6 space-y-6 text-center lg:text-left z-10" data-aos="fade-right">
                     <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-100 uppercase tracking-widest animate-pulse">
-                        🌱 Smart City Innovation
+                        <i class="bi bi-leaf-fill text-emerald-600 mr-1.5"></i> Smart City Innovation
                     </span>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
                         Harmoni Modernitas <br>
@@ -58,10 +58,10 @@
                                 <!-- Top Badges -->
                                 <div class="flex justify-between items-start z-10">
                                     <span class="px-3 py-1 bg-white/10 backdrop-blur-md text-white font-bold text-xs rounded-full border border-white/20">
-                                        🌆 SCBD Tech Area
+                                        <i class="bi bi-building mr-1"></i> SCBD Tech Area
                                     </span>
                                     <span class="px-3 py-1 bg-emerald-500/30 backdrop-blur-md text-emerald-200 font-bold text-xs rounded-full border border-emerald-400/30">
-                                        🌳 Green Spine
+                                        <i class="bi bi-tree-fill mr-1"></i> Green Spine
                                     </span>
                                 </div>
                                 
@@ -84,7 +84,7 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-slate-100 pb-6">
                 <div>
                     <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 flex items-center gap-2">
-                        <span class="text-2xl">📊</span> Indikator Smart City Jaksel
+                        <i class="bi bi-bar-chart-line-fill text-emerald-600"></i> Indikator Smart City Jaksel
                     </h2>
                     <p class="text-xs sm:text-sm text-slate-500 mt-1">Metrik lingkungan terdigitalisasi dan ketersediaan mobilitas publik secara real-time.</p>
                 </div>
@@ -181,7 +181,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-4" data-aos="fade-up">
                 <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full">
-                    🗺️ Destinasi Pilihan
+                    <i class="bi bi-map mr-1"></i> Destinasi Pilihan
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">Jelajah Sudut Hijau Jakarta Selatan</h2>
                 <p class="text-slate-500 text-sm sm:text-base leading-relaxed">
@@ -199,7 +199,7 @@
                         @else
                             <!-- Placeholder with custom thematic HSL gradient -->
                             <div class="w-full h-full bg-gradient-to-br from-emerald-400/80 to-teal-700/90 flex flex-col items-center justify-center p-6 text-white text-center relative">
-                                <span class="text-3xl mb-2">🌳</span>
+                                <i class="bi bi-tree text-3xl mb-2"></i>
                                 <span class="font-bold text-sm tracking-wide">{{ $dest->category }}</span>
                                 <span class="text-[10px] text-emerald-100 mt-1 uppercase tracking-widest font-semibold border-b border-emerald-300 pb-0.5">{{ $dest->name }}</span>
                             </div>
@@ -226,12 +226,12 @@
                         <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-50">
                             @if($dest->walkable)
                                 <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">
-                                    🚶 Ramah Pejalan Kaki
+                                    <i class="bi bi-person-walking"></i> Ramah Pejalan Kaki
                                 </span>
                             @endif
                             @if($dest->mrt_integrated)
                                 <span class="inline-flex items-center gap-1 text-[10px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-100">
-                                    🚇 Stasiun MRT Terdekat
+                                    <i class="bi bi-subway"></i> Stasiun MRT Terdekat
                                 </span>
                             @endif
                         </div>
@@ -266,7 +266,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
                     <div class="lg:col-span-8 space-y-6">
                         <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 font-extrabold text-xs uppercase rounded-lg border border-emerald-500/30 tracking-widest">
-                            🏮 Budaya Betawi Setu Babakan
+                            <i class="bi bi-award-fill mr-1"></i> Budaya Betawi Setu Babakan
                         </span>
                         <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Kekayaan Tradisi yang Selalu Dirawat</h2>
                         <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
@@ -283,7 +283,7 @@
                     <div class="lg:col-span-4 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
                         <div class="w-48 h-48 bg-white/10 backdrop-blur-md rounded-full border border-white/20 flex items-center justify-center shadow-lg transform rotate-3 group hover:rotate-12 transition-transform duration-500">
                             <div class="text-center p-6 text-white space-y-2 group-hover:scale-110 transition-transform duration-500">
-                                <span class="text-5xl block animate-bounce">🏮</span>
+                                <i class="bi bi-award-fill text-5xl block animate-bounce text-emerald-300"></i>
                                 <span class="font-extrabold text-xs tracking-widest uppercase block text-emerald-300">Setu Babakan</span>
                                 <span class="text-[10px] text-slate-300 font-medium block">Jakarta Selatan</span>
                             </div>

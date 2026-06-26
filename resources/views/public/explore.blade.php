@@ -46,7 +46,7 @@
                     <div class="space-y-2">
                         <label for="search" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Cari Destinasi</label>
                         <div class="relative">
-                            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
+                            <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
                             <input type="text" name="search" id="search" value="{{ request('search') }}" placeholder="Ketik nama..." class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
                         </div>
                     </div>
@@ -56,10 +56,10 @@
                         <label for="category" class="block text-xs font-bold uppercase tracking-wider text-slate-500">Pilih Kategori</label>
                         <select name="category" id="category" class="w-full bg-slate-50 border border-slate-200 text-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 transition-colors">
                             <option value="">Semua Destinasi</option>
-                            <option value="Ruang Terbuka Hijau" {{ $category === 'Ruang Terbuka Hijau' ? 'selected' : '' }}>🌳 Ruang Terbuka Hijau</option>
-                            <option value="Heritage" {{ $category === 'Heritage' ? 'selected' : '' }}>🏮 Warisan Budaya (Heritage)</option>
-                            <option value="Tempat Wisata" {{ $category === 'Tempat Wisata' ? 'selected' : '' }}>🎡 Tempat Wisata</option>
-                            <option value="Aesthetic Cafe" {{ $category === 'Aesthetic Cafe' ? 'selected' : '' }}>☕ Aesthetic Cafe</option>
+                            <option value="Ruang Terbuka Hijau" {{ $category === 'Ruang Terbuka Hijau' ? 'selected' : '' }}>Ruang Terbuka Hijau</option>
+                            <option value="Heritage" {{ $category === 'Heritage' ? 'selected' : '' }}>Warisan Budaya (Heritage)</option>
+                            <option value="Tempat Wisata" {{ $category === 'Tempat Wisata' ? 'selected' : '' }}>Tempat Wisata</option>
+                            <option value="Aesthetic Cafe" {{ $category === 'Aesthetic Cafe' ? 'selected' : '' }}>Aesthetic Cafe</option>
                         </select>
                     </div>
 
@@ -68,7 +68,7 @@
                         <label class="relative flex items-center cursor-pointer">
                             <input type="checkbox" name="walkable" value="1" {{ $walkable ? 'checked' : '' }} class="sr-only peer">
                             <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
-                            <span class="ml-3 text-sm font-bold text-slate-700">🚶 Ramah Pejalan Kaki</span>
+                            <span class="ml-3 text-sm font-bold text-slate-700 flex items-center gap-1.5"><i class="bi bi-person-walking"></i> Ramah Pejalan Kaki</span>
                         </label>
                     </div>
 
@@ -77,7 +77,7 @@
                         <label class="relative flex items-center cursor-pointer">
                             <input type="checkbox" name="mrt" value="1" {{ $mrt ? 'checked' : '' }} class="sr-only peer">
                             <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-teal-600"></div>
-                            <span class="ml-3 text-sm font-bold text-slate-700">🚇 Dekat Stasiun MRT</span>
+                            <span class="ml-3 text-sm font-bold text-slate-700 flex items-center gap-1.5"><i class="bi bi-subway"></i> Dekat Stasiun MRT</span>
                         </label>
                     </div>
 
@@ -105,12 +105,12 @@
             <!-- Directory Grid -->
             <div>
                 <h2 class="text-2xl font-black text-slate-900 mb-6 flex items-center gap-2" data-aos="fade-right">
-                    📂 Daftar Destinasi Terdata <span class="text-sm font-bold text-slate-400 bg-slate-200/50 px-3 py-1 rounded-full">{{ $destinations->total() }} Lokasi</span>
+                    <i class="bi bi-folder2-open text-emerald-600"></i> Daftar Destinasi Terdata <span class="text-sm font-bold text-slate-400 bg-slate-200/50 px-3 py-1 rounded-full">{{ $destinations->total() }} Lokasi</span>
                 </h2>
                 
                 @if($destinations->isEmpty())
                 <div class="bg-white border border-dashed border-slate-200 rounded-3xl p-12 text-center text-slate-500">
-                    <span class="text-4xl block mb-2">🔍</span>
+                    <i class="bi bi-search text-4xl text-slate-300 block mb-2"></i>
                     <h3 class="font-extrabold text-slate-700 text-lg">Tidak ada destinasi ditemukan</h3>
                     <p class="text-xs text-slate-400 mt-1">Coba sesuaikan kombinasi filter atau reset pencarian Anda.</p>
                 </div>
@@ -125,7 +125,7 @@
                                 <img src="{{ asset($dest->image_path) }}" alt="{{ $dest->name }}" class="w-full h-full object-cover">
                             @else
                                 <div class="w-full h-full bg-gradient-to-br from-emerald-400 to-teal-800 flex flex-col items-center justify-center p-6 text-white text-center">
-                                    <span class="text-2xl mb-1">🌳</span>
+                                    <i class="bi bi-tree text-2xl mb-1"></i>
                                     <span class="font-bold text-xs tracking-wider uppercase border-b border-emerald-300/40 pb-0.5">{{ $dest->name }}</span>
                                 </div>
                             @endif
@@ -147,7 +147,7 @@
 
                             <!-- Address -->
                             <div class="text-[11px] text-slate-400 flex items-start gap-1">
-                                <span class="text-sm">📍</span>
+                                <i class="bi bi-geo-alt-fill text-slate-400 text-[11px] mt-0.5"></i>
                                 <span class="line-clamp-2">{{ $dest->address }}</span>
                             </div>
 
@@ -155,13 +155,13 @@
                             <div class="border-t border-slate-50 pt-4 space-y-3">
                                 <div class="flex flex-wrap gap-2">
                                     @if($dest->walkable)
-                                        <span class="text-[9px] font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">
-                                            🚶 Walkable
+                                        <span class="text-[9px] font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 flex items-center gap-1">
+                                            <i class="bi bi-person-walking"></i> Walkable
                                         </span>
                                     @endif
                                     @if($dest->mrt_integrated)
-                                        <span class="text-[9px] font-extrabold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-100">
-                                            🚇 MRT Integrated
+                                        <span class="text-[9px] font-extrabold text-teal-800 bg-teal-50 px-2 py-0.5 rounded border border-teal-100 flex items-center gap-1">
+                                            <i class="bi bi-subway"></i> MRT Integrated
                                         </span>
                                     @endif
                                 </div>
@@ -171,7 +171,7 @@
                                         Lihat Detail
                                     </a>
                                     <button type="button" onclick="focusMap({{ $dest->latitude }}, {{ $dest->longitude }}, '{{ addslashes($dest->name) }}', '{{ $dest->category }}', {{ $index }})" class="w-full text-center py-2.5 bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-700 border border-slate-200 hover:border-emerald-200 font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm">
-                                        <span>🔍</span> Di Peta
+                                        <i class="bi bi-search text-xs"></i> Di Peta
                                     </button>
                                 </div>
                             </div>

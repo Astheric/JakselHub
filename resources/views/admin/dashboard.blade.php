@@ -16,7 +16,7 @@
                 <a href="{{ route('admin.destinations.index') }}" class="text-xs text-emerald-600 hover:text-emerald-700 font-bold block pt-1">Kelola Destinasi &rarr;</a>
             </div>
             <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shadow-sm">
-                🌳
+                <i class="bi bi-tree"></i>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
                 <a href="{{ route('admin.timelines.index') }}" class="text-xs text-emerald-600 hover:text-emerald-700 font-bold block pt-1">Kelola Linimasa &rarr;</a>
             </div>
             <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shadow-sm">
-                📜
+                <i class="bi bi-journal-text"></i>
             </div>
         </div>
 
@@ -40,7 +40,7 @@
                 <a href="{{ route('admin.cultures.index') }}" class="text-xs text-emerald-600 hover:text-emerald-700 font-bold block pt-1">Kelola Budaya &rarr;</a>
             </div>
             <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shadow-sm">
-                🎭
+                <i class="bi bi-masks"></i>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
     <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm max-w-2xl">
         <div class="border-b border-slate-100 pb-4 mb-6">
             <h2 class="text-lg font-black text-slate-800 flex items-center gap-2">
-                ⚙️ Kontrol Manual Metrik Smart City
+                <i class="bi bi-gear-fill text-slate-700"></i> Kontrol Manual Metrik Smart City
             </h2>
             <p class="text-xs text-slate-500 mt-1">Formulir di bawah digunakan untuk mematangkan data real-time kota (AQI, Ruang Hijau, Transportasi Umum) apabila integrasi API terhambat.</p>
         </div>

@@ -11,11 +11,11 @@
             <form action="{{ route('admin.destinations.sync') }}" method="POST" class="m-0" onsubmit="this.querySelector('button').innerHTML = '⏳ Menarik Data...'; this.querySelector('button').disabled = true;">
                 @csrf
                 <button type="submit" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
-                    <span>🔄</span> Sinkronisasi API
+                    <i class="bi bi-arrow-repeat"></i> Sinkronisasi API
                 </button>
             </form>
             <a href="{{ route('admin.destinations.create') }}" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md transition-all flex items-center gap-1.5">
-                <span>➕</span> Tambah Destinasi Baru
+                <i class="bi bi-plus-lg"></i> Tambah Destinasi Baru
             </a>
         </div>
     </div>
@@ -24,7 +24,7 @@
     <div class="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
         @if($destinations->isEmpty())
             <div class="p-12 text-center text-slate-500">
-                <span class="text-3xl block mb-2">📁</span>
+                <i class="bi bi-folder text-3xl block mb-2 text-slate-300"></i>
                 <p class="font-extrabold text-slate-700">Belum ada data destinasi wisata terdata.</p>
                 <p class="text-xs text-slate-400 mt-1">Mulai isi dengan mengklik tombol tambah di atas.</p>
             </div>
@@ -50,7 +50,7 @@
                                             @if($dest->image_path)
                                                 <img src="{{ asset($dest->image_path) }}" alt="{{ $dest->name }}" class="w-full h-full object-cover">
                                             @else
-                                                <span class="text-lg">🌳</span>
+                                                <i class="bi bi-tree text-lg text-slate-400"></i>
                                             @endif
                                         </div>
                                         <div>
@@ -79,12 +79,12 @@
                                 <td class="px-6 py-4 space-y-1">
                                     @if($dest->walkable)
                                         <span class="inline-block text-[9px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded mr-1">
-                                            🚶 Walkable
+                                            <i class="bi bi-person-walking mr-0.5"></i> Walkable
                                         </span>
                                     @endif
                                     @if($dest->mrt_integrated)
                                         <span class="inline-block text-[9px] font-bold text-teal-800 bg-teal-50 border border-teal-100 px-2 py-0.5 rounded">
-                                            🚇 MRT Integrated
+                                            <i class="bi bi-subway mr-0.5"></i> MRT Integrated
                                         </span>
                                     @endif
                                     @if(!$dest->walkable && !$dest->mrt_integrated)
@@ -96,14 +96,14 @@
                                 <td class="px-6 py-4 text-right">
                                     <div class="flex items-center justify-end space-x-2">
                                         <a href="{{ route('admin.destinations.edit', $dest->id) }}" class="p-2 bg-slate-50 hover:bg-emerald-50 text-slate-500 hover:text-emerald-700 border border-slate-200 hover:border-emerald-200 rounded-xl transition-all font-semibold text-xs flex items-center justify-center">
-                                            📝 Edit
+                                            <i class="bi bi-pencil-square mr-1"></i> Edit
                                         </a>
                                         
                                         <form method="POST" action="{{ route('admin.destinations.destroy', $dest->id) }}" class="inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus destinasi {{ $dest->name }}?')">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="p-2 bg-slate-50 hover:bg-red-50 text-slate-500 hover:text-red-700 border border-slate-200 hover:border-red-200 rounded-xl transition-all font-semibold text-xs flex items-center justify-center">
-                                                🗑️ Hapus
+                                                <i class="bi bi-trash mr-1"></i> Hapus
                                             </button>
                                         </form>
                                     </div>
